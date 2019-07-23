@@ -21,7 +21,7 @@ cookies.set = function(name = "default", value = "", cookieSetting = {}) {
   };
   Object.assign(currentCookieSetting, cookieSetting);
   Cookies.set(
-    `visual-${process.env.VUE_APP_VERSION}-${name}`,
+    `cg-visual-${process.env.VUE_APP_VERSION}-${name}`,
     value,
     currentCookieSetting
   );
@@ -34,7 +34,7 @@ cookies.set = function(name = "default", value = "", cookieSetting = {}) {
  * @param {String} name cookie name
  */
 cookies.get = function(name = "default") {
-  return Cookies.get(`visual-${process.env.VUE_APP_VERSION}-${name}`);
+  return Cookies.get(`cg-visual-${process.env.VUE_APP_VERSION}-${name}`);
 };
 
 /**
@@ -51,7 +51,7 @@ cookies.getAll = function() {
  * @param {String} name cookie name
  */
 cookies.remove = function(name = "default") {
-  return Cookies.remove(`visual-${process.env.VUE_APP_VERSION}-${name}`);
+  return Cookies.remove(`cg-visual-${process.env.VUE_APP_VERSION}-${name}`);
 };
 
 export default cookies;

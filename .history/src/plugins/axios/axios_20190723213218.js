@@ -33,7 +33,7 @@ const errorCreate = msg => {
  */
 const errorLog = error => {
   // 添加到日志
-  store.dispatch("visual/log/push", {
+  store.dispatch("cg-visual/log/push", {
     message: "数据请求异常",
     type: "danger",
     meta: {
@@ -43,7 +43,7 @@ const errorLog = error => {
   // 打印到控制台
   if (process.env.NODE_ENV === "development") {
     // util.log.danger('>>>>>> Error >>>>>>')
-    util.log.capsule(" visual ", `💀 ${error}`, "danger");
+    util.log.capsule(" cg-visual ", `💀 ${error}`, "danger");
   }
   // 显示提示,依赖于Ant Dedign of Vue
   // message.error(error.message);
@@ -59,7 +59,7 @@ const errorLog = error => {
 const success = success => {
   // 打印到控制台
   if (process.env.NODE_ENV === "development") {
-    util.log.capsule(" visual ", `🌝 ${success}`, "success");
+    util.log.capsule(" cg-visual ", `🌝 ${success}`, "success");
   }
 };
 //axios默认配置

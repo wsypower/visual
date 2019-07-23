@@ -3,14 +3,14 @@ import App from './App.vue'
 import router from './router'
 import './plugins//element/element.js'
 // 核心插件
-import visual from '@/plugins/visual'
+import cg-visual from '@/plugins/cg-visual'
 // store
 import store from './store/index'
 
 Vue.config.productionTip = false
 
 // 核心插件
-Vue.use(visual)
+Vue.use(cg-visual)
 new Vue({
   router,
   store,

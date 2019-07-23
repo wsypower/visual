@@ -49,7 +49,7 @@ export default {
         time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
         meta: {
           // 当前用户信息
-          user: rootState.cgadmin.user.info,
+          user: rootState.cgvisual.user.info,
           // 当前用户的 userId
           userId: util.cookies.get('userId'),
           // 当前地址

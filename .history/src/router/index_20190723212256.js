@@ -64,7 +64,7 @@ router.afterEach(to => {
   // 进度条
   NProgress.done()
   // 打开新的页面
-  store.dispatch('visual/page/open', to)
+  store.dispatch('cg-visual/page/open', to)
   // 更改标题
   util.title(to.meta.title)
 })

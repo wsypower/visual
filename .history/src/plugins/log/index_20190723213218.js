@@ -12,12 +12,12 @@ export default {
           // 赋值给 message 字段
           // 为了方便使用
           // eg: this.$log.push('foo text')
-          store.dispatch('visual/log/push', {
+          store.dispatch('cg-visual/log/push', {
             message: data
           })
         } else if (typeof data === 'object') {
           // 如果传递来的数据是对象
-          store.dispatch('visual/log/push', data)
+          store.dispatch('cg-visual/log/push', data)
         }
       }
     }

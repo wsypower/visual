@@ -46,7 +46,7 @@ util.getURLParameters = prop => {
  * @param {String} title 标题
  */
 util.title = function(titleText) {
-  const processTitle = process.env.VUE_APP_TITLE || 'visual'
+  const processTitle = process.env.VUE_APP_TITLE || 'cg-visual'
   window.document.title = `${processTitle}${titleText ? ` | ${titleText}` : ''}`
 }
 
@@ -60,10 +60,10 @@ util.open = function(url) {
   var a = document.createElement('a')
   a.setAttribute('href', url)
   a.setAttribute('target', '_blank')
-  a.setAttribute('id', 'visual-link-temp')
+  a.setAttribute('id', 'cg-visual-link-temp')
   document.body.appendChild(a)
   a.click()
-  document.body.removeChild(document.getElementById('visual-link-temp'))
+  document.body.removeChild(document.getElementById('cg-visual-link-temp'))
 }
 
 export default util

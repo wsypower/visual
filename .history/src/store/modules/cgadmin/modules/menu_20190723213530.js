@@ -17,9 +17,9 @@ export default {
      * @returns {Promise}
      * @example
      // 折叠侧边栏菜单
-     * this.$store.dispatch('cgadmin/menu/asideCollapseSet', false)
+     * this.$store.dispatch('cgvisual/menu/asideCollapseSet', false)
      // 展开侧边栏菜单
-     * this.$store.dispatch('cgadmin/menu/asideCollapseSet', true)
+     * this.$store.dispatch('cgvisual/menu/asideCollapseSet', true)
      */
     asideCollapseSet({ commit, dispatch, state }, collapse) {
       return new Promise(async resolve => {
@@ -27,7 +27,7 @@ export default {
         commit('asideCollapseSetState', collapse)
         // 持久化
         await dispatch(
-          'cgadmin/db/set',
+          'cgvisual/db/set',
           {
             dbName: 'sys',
             path: 'menu.asideCollapse',
@@ -50,7 +50,7 @@ export default {
         commit('asideCollapseToggleState')
         // 持久化
         await dispatch(
-          'cgadmin/db/set',
+          'cgvisual/db/set',
           {
             dbName: 'sys',
             path: 'menu.asideCollapse',
@@ -71,7 +71,7 @@ export default {
       return new Promise(async resolve => {
         // store 赋值
         state.asideCollapse = await dispatch(
-          'cgadmin/db/get',
+          'cgvisual/db/get',
           {
             dbName: 'sys',
             path: 'menu.asideCollapse',
