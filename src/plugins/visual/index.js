@@ -1,5 +1,12 @@
-// element =>按需引入（可以自己调整引入方式）
-import '../element/element.js'
+/*
+ * @Author: wei.yafei
+ * @Date: 2019-07-24 22:27:26
+ * @Last Modified by:   wei.yafei
+ * @Last Modified time: 2019-07-24 22:27:26
+ */
+// Element
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 // axios
 import '../axios/axios'
 // 组件
@@ -28,6 +35,8 @@ export default {
     Vue.prototype.$version = process.env.VUE_APP_VERSION
     // 构建时间
     Vue.prototype.$buildTime = process.env.VUE_APP_BUILD_TIME
+    // Element
+    Vue.use(ElementUI)
     // 插件
     Vue.use(pluginLog)
     Vue.use(pluginOpen)

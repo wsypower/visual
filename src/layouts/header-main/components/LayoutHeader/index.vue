@@ -5,11 +5,10 @@
       <div class="header__selection">
         <!-- elemeent Cascader级连选择器 -->
         <el-cascader
-          v-model="regionalSelection"
+          v-model="selecode"
           :props="cascaderOption"
           :options="options"
           :show-all-levels="false"
-          @change="SelectionChange"
         ></el-cascader>
       </div>
       <!-- 项目名称 -->
@@ -28,12 +27,12 @@
 </template>
 <script>
 import dayjs from 'dayjs'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 import LayoutHeaderNav from '../components/header/nav/layoutHeaderNav.vue'
 export default {
   name: 'LayoutHeader',
   components: {
-    LayoutHeaderNav,
+    LayoutHeaderNav
   },
   data() {
     return {
@@ -42,8 +41,6 @@ export default {
         date: '',
         week: ''
       },
-      /* Cascader级连选择器v-model数据 */
-      regionalSelection: '33',
       /* Cascader级连选择器数据源 */
       options: [
         {
@@ -56,24 +53,60 @@ export default {
         },
         {
           code: '3302',
-          label: '绍兴市'
+          label: '宁波市'
         },
         {
           code: '3303',
-          label: '指南'
+          label: '温州市'
         },
         {
           code: '3304',
-          label: '指南'
+          label: '嘉兴市'
         },
         {
           code: '3305',
-          label: '指南'
+          label: '湖州市'
+        },
+        {
+          code: '3306',
+          label: '绍兴市'
+        },
+        {
+          code: '3307',
+          label: '金华市'
+        },
+        {
+          code: '3308',
+          label: '衢州市'
+        },
+        {
+          code: '3309',
+          label: '舟山市'
+        },
+        {
+          code: '3310',
+          label: '台州市'
+        },
+        {
+          code: '3311',
+          label: '丽水市'
         }
       ]
     }
   },
   computed: {
+    ...mapState('cgvisual/code', {
+      globalCode: state => state.code
+    }),
+    /* Cascader级连选择器v-model数据 */
+    selecode: {
+      set(code) {
+        this.setCode(code)
+      },
+      get() {
+        return this.globalCode
+      }
+    },
     /* Cascader级连选择器Prop配置 */
     cascaderOption() {
       return {
@@ -87,6 +120,11 @@ export default {
     this.setDate()
   },
   methods: {
+    /**
+     * @description 当选中节点变化时触发,赋值给VUEX的code
+     * @author weiyafei
+     * @date 2019-07-24-17:31:32
+     */
     ...mapMutations('cgvisual/code', ['setCode']),
     /**
      * @description 设置年月日时分秒周
@@ -108,14 +146,6 @@ export default {
     getlocalTime(week) {
       this.time.date = dayjs().format(`YYYY - MM - DD   HH : mm : ss `)
       this.time.week = week[dayjs().get('day')]
-    },
-    /**
-     * @description 当选中节点变化时触发,赋值给VUEX的code
-     * @author weiyafei
-     * @date 2019-07-24-17:31:32
-     */
-    SelectionChange(code) {
-      this.setCode(code)
     }
   }
 }

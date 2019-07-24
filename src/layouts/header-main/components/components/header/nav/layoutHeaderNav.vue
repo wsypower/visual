@@ -60,13 +60,13 @@ export default {
      * @param {Object} index navItem的索引
      */
     navItemClickHandler(index, path) {
-      this.navItemIndex = index
+      /* 判断是否跳转赋值index */
       if (!path == '') {
+        this.navItemIndex = index
         this.$router.push(path)
       } else {
-        this.$notify({
-          title: '警告',
-          message: '这是一条警告的提示消息',
+        this.$message({
+          message: '功能正在开发，敬请期待！',
           type: 'warning'
         })
       }

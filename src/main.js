@@ -10,6 +10,9 @@ import router from '@/router/index'
 
 Vue.config.productionTip = false
 
+//mock => 生产环境(上线前请注释！！！)
+import '@/mock'
+
 // 核心插件
 Vue.use(cgvisual)
 new Vue({
