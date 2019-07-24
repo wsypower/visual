@@ -1,4 +1,6 @@
 export default {
+  //默认区域code
+  code: '33',
   // 快捷键
   // 支持快捷键 例如 ctrl+shift+s
   hotkey: {

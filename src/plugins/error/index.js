@@ -2,7 +2,7 @@
  * @Author: wei.yafei
  * @Date: 2019-07-11 19:58:33
  * @Last Modified by: wei.yafei 
- * @Last Modified time: 2019-07-24 15:14:57
+ * @Last Modified time: 2019-07-24 15:33:29
  */
 import store from '@/store'
 import util from '@/utils/util'
@@ -13,19 +13,9 @@ import util from '@/utils/util'
 export default {
   install(Vue, options) {
     Vue.config.errorHandler = function(error, instance, info) {
-      //获得更新后立即使用DOM
-      // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
+      //     //获得更新后立即使用DOM
+      //     // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
       Vue.nextTick(() => {
-        // store 追加 log
-        store.dispatch('cgvisual/log/push', {
-          message: `${info}: ${error.message}`,
-          type: 'danger',
-          meta: {
-            error,
-            instance
-          }
-        })
-        // 只在开发模式下打印 log
         if (process.env.NODE_ENV === 'development') {
           util.log.capsule(' cgvisual ', '💀 错误提示!', 'danger')
           util.log.danger('>>>>>> 错误信息 >>>>>>')
