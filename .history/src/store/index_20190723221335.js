@@ -15,7 +15,7 @@ import Vuex from 'vuex'
 //解决vuex刷新后数据消失问题  => 简单教程（https://juejin.im/post/5cb3fea0f265da03587befa7）
 //默认持久化所有state
 // import createPersistedState from 'vuex-persistedstate'
-import cgVisual from './modules/visual'
+import cgvisual from './modules/cgvisual'
 Vue.use(Vuex)
 /* eslint-disable no-new */
 const store = new Vuex.Store({

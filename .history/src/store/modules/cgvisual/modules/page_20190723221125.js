@@ -125,7 +125,7 @@ export default {
    */
   getters: {
     getRouterPage(state, getters, rootState) {
-      return rootState.cg-visual.menu.aside
+      return rootState.cgvisual.menu.aside
     }
   }
 }

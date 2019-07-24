@@ -13,7 +13,7 @@ const util = {
  * @param {String} title 标题
  */
 util.title = function(titleText) {
-  const processTitle = process.env.VUE_APP_TITLE || "cg-visual";
+  const processTitle = process.env.VUE_APP_TITLE || "cgvisual";
   window.document.title = `${processTitle}${
     titleText ? ` | ${titleText}` : ""
   }`;
@@ -29,10 +29,10 @@ util.open = function(url) {
   var a = document.createElement("a");
   a.setAttribute("href", url);
   a.setAttribute("target", "_blank");
-  a.setAttribute("id", "cg-visual-link-temp");
+  a.setAttribute("id", "cgvisual-link-temp");
   document.body.appendChild(a);
   a.click();
-  document.body.removeChild(document.getElementById("cg-visual-link-temp"));
+  document.body.removeChild(document.getElementById("cgvisual-link-temp"));
 };
 
 export default util;

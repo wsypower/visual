@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 // 核心插件
-import cg-visual from '@/plugins/cg-visual'
+import cgvisual from '@/plugins/cgvisual'
 // store
 import store from './store/index'
 

@@ -17,7 +17,7 @@ export default {
       // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
       Vue.nextTick(() => {
         // store 追加 log
-        store.dispatch('cg-visual/log/push', {
+        store.dispatch('cgvisual/log/push', {
           message: `${info}: ${error.message}`,
           type: 'danger',
           meta: {
@@ -27,7 +27,7 @@ export default {
         })
         // 只在开发模式下打印 log
         if (process.env.NODE_ENV === 'development') {
-          util.log.capsule(' cg-visual ', '💀 错误提示!', 'danger')
+          util.log.capsule(' cgvisual ', '💀 错误提示!', 'danger')
           util.log.danger('>>>>>> 错误信息 >>>>>>')
           console.log(info)
           util.log.danger('>>>>>> 错误组件 >>>>>>')
@@ -45,7 +45,7 @@ export default {
       // `trace` 是组件的继承关系追踪
       Vue.nextTick(() => {
         // 只在开发模式下打印 log
-        util.log.capsule(' cg-visual ', '💣 警告提示!', 'warning')
+        util.log.capsule(' cgvisual ', '💣 警告提示!', 'warning')
         util.log.warning('>>>>>> 警告信息 >>>>>>')
         console.log(msg)
         util.log.warning('>>>>>> 警告实例 >>>>>>')

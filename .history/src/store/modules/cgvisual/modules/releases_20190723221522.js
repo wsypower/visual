@@ -8,7 +8,7 @@ export default {
      * @param {Object} state vuex state
      */
     versionShow() {
-      util.log.capsule('（cg-visual）', `版本号:v${process.env.VUE_APP_VERSION}`)
+      util.log.capsule('（cgvisual）', `版本号:v${process.env.VUE_APP_VERSION}`)
     }
   }
 }

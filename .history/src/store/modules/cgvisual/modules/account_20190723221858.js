@@ -30,20 +30,20 @@ export default {
           .then(async res => {
             // 设置 vuex 用户信息
             await dispatch(
-              'cg-visual/user/set',
+              'cgvisual/user/set',
               {
                 name: res
               },
               { root: true }
             )
             //加载提示结束
-            commit('cg-visual/page/SpinningRefresh', null, { root: true })
+            commit('cgvisual/page/SpinningRefresh', null, { root: true })
             // 结束
             resolve(res)
           })
           .catch(() => {
             //加载提示结束
-            commit('cg-visual/page/SpinningRefresh', null, { root: true })
+            commit('cgvisual/page/SpinningRefresh', null, { root: true })
             //打断登录退出至401页面
             dispatch('logout')
             //回调捕获错误
@@ -59,7 +59,7 @@ export default {
       // 删除cookie
       util.cookies.remove('userId')
       // 清空 vuex 用户信息
-      dispatch('cg-visual/user/set', {}, { root: true })
+      dispatch('cgvisual/user/set', {}, { root: true })
       // 跳转路由
       console.log('跳转401')
       router.replace({

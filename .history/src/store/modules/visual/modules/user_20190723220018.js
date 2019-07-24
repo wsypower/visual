@@ -27,7 +27,7 @@ export default {
         commit('infoSet', info)
         // 持久化 => 讲用户数据放入到存储到localStorage
         await dispatch(
-          'cg-visual/db/set',
+          'cgvisual/db/set',
           {
             dbName: 'sys',
             path: 'user.info',
@@ -48,7 +48,7 @@ export default {
       return new Promise(async resolve => {
         // store 赋值
         state.info = await dispatch(
-          'cg-visual/db/get',
+          'cgvisual/db/get',
           {
             dbName: 'sys',
             path: 'user.info',
