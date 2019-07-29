@@ -1,8 +1,8 @@
 /*
  * @Author: wei.yafei
  * @Date: 2019-06-14 16:56:20
- * @Last Modified by: wei.yafei
- * @Last Modified time: 2019-07-23 22:52:45
+ * @Last Modified by: wei.yafei 
+ * @Last Modified time: 2019-07-26 23:57:11
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -54,7 +54,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 router.beforeEach((to, from, next) => {
-  console.log('走新页面')
   // 进度条
   NProgress.start()
   next()
@@ -66,7 +65,7 @@ router.afterEach(to => {
   // 打开新的页面
   store.dispatch('cgvisual/page/open', to)
   // 更改标题
-  util.title(to.meta.title)
+  // util.title(to.meta.title)
 })
 
 /*=============================================

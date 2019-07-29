@@ -8,10 +8,16 @@ import store from './store/index'
 // 菜单和路由设置
 import router from '@/router/index'
 
+//v-charts
+import VCharts from 'v-charts'
+Vue.use(VCharts)
+// import echarts from 'echarts'
+// Vue.use(echarts)
+
 Vue.config.productionTip = false
 
 //mock => 生产环境(上线前请注释！！！)
-import '@/mock'
+// import '@/mock'
 
 // 核心插件
 Vue.use(cgvisual)

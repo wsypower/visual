@@ -2,7 +2,7 @@
  * @Author: wei.yafei
  * @Date: 2019-05-23 23:32:53
  * @Last Modified by: wei.yafei 
- * @Last Modified time: 2019-07-24 11:30:40
+ * @Last Modified time: 2019-07-26 21:15:09
  */
 /* eslint-disable no-unused-vars */
 
@@ -17,7 +17,7 @@ process.env.VUE_APP_VERSION = require('./package.json').version
 process.env.VUE_APP_BUILD_TIME = require('dayjs')().format('YYYY-M-D HH:mm:ss')
 
 // 基础路径 注意发布之前要先修改这里
-let publicPath = './'
+let publicPath = '/web/static/screen/'
 
 module.exports = {
   /*
@@ -66,21 +66,21 @@ module.exports = {
         config => config.devtool('cheap-source-map')
       )
       // 非开发环境
-      .when(process.env.NODE_ENV !== 'development', config => {
-        config.optimization.minimizer([
-          new UglifyJsPlugin({
-            uglifyOptions: {
-              // 移除 console
-              // 其它优化选项 https://segmentfault.com/a/1190000010874406
-              compress: {
-                drop_console: true,
-                drop_debugger: true,
-                pure_funcs: ['console.log']
-              }
-            }
-          })
-        ])
-      })
+      // .when(process.env.NODE_ENV !== 'development', config => {
+      //   config.optimization.minimizer([
+      //     new UglifyJsPlugin({
+      //       uglifyOptions: {
+      //         // 移除 console
+      //         // 其它优化选项 https://segmentfault.com/a/1190000010874406
+      //         compress: {
+      //           drop_console: true,
+      //           drop_debugger: true,
+      //           pure_funcs: ['console.log']
+      //         }
+      //       }
+      //     })
+      //   ])
+      // })
     // svg自动
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()

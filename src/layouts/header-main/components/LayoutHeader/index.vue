@@ -12,7 +12,7 @@
         ></el-cascader>
       </div>
       <!-- 项目名称 -->
-      <div class="header__title" flex="cross:center main:center">"浙江省“三服务”小管家"</div>
+      <div class="header__title" flex="cross:center main:center">浙江省“三服务”小管家</div>
       <!-- 显示时间 -->
       <div class="header__time" flex>
         <!-- 年月日时分秒 -->
@@ -29,6 +29,7 @@
 import dayjs from 'dayjs'
 import { mapMutations, mapState } from 'vuex'
 import LayoutHeaderNav from '../components/header/nav/layoutHeaderNav.vue'
+import { getCode } from '@/api/situation'
 export default {
   name: 'LayoutHeader',
   components: {
@@ -118,6 +119,7 @@ export default {
   mounted() {
     /* 调用时间函数 修改data内 date && week */
     this.setDate()
+    this.requestCode()
   },
   methods: {
     /**
@@ -146,6 +148,17 @@ export default {
     getlocalTime(week) {
       this.time.date = dayjs().format(`YYYY - MM - DD   HH : mm : ss `)
       this.time.week = week[dayjs().get('day')]
+    },
+    /**
+     * @description 获取code
+     * @author weiyafei
+     * @date 2019-07-26-15:40:41
+     * @return {Array} code数组集合
+     */
+    requestCode() {
+      getCode().then(res => {
+        this.options = res
+      })
     }
   }
 }
@@ -254,7 +267,7 @@ export default {
   border-bottom-color: #38b0d8;
 }
 .el-cascader-menu__wrap {
-  height: 350px;
+  height: 445px;
 }
 .el-cascader-menu {
   color: #fff;

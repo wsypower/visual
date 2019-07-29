@@ -52,17 +52,17 @@ export default {
         //设置地图鼠标事件，默认的都改成false
         interactions: interactionDefaults({
           doubleClickZoom: false,
-          // mouseWheelZoom:false,
+          mouseWheelZoom:false,
           altShiftDragRotate: false,
           keyboard: false,
           shiftDragZoom: false,
-          // dragPan:false,
+          dragPan:false,
           pinchZoom: false
         }),
         view: new View({
           projection: 'EPSG:4326',
-          center: [120.24536132812501, 29.28955078125],
-          zoom: 8,
+          center: [120.41036132812501, 29.11955078125],
+          zoom: 7.9,
           maxZoom: 20,
           minZoom: 5
         })
